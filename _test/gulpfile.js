@@ -1,41 +1,41 @@
-const { series, parallel } = require('gulp')
-      del  = require('del'),
-      dotenv = require('dotenv')
-      hcjlab = require('../index')
-let   path = process.env.APP_ENV?'.env.'+process.env.APP_ENV:'.env'
+const { series, parallel } = require('gulp'),
+  del = require('del'),
+  dotenv = require('dotenv'),
+  hcjlab = require('@hcjlab/core')
+let path = process.env.APP_ENV ? '.env.' + process.env.APP_ENV : '.env'
 const configs = hcjlab.getConfigs()
 
 console.log(`CONFIG: ${path}`)
-dotenv.config({path})
+dotenv.config({ path })
 
-function clean(){
+function clean() {
   return Promise.resolve(del([
-    configs.paths.tmp.root, 
-    configs.paths.root + '/rev', 
+    configs.paths.tmp.root,
+    configs.paths.root + '/rev',
     configs.paths.dest.root
-  ],{force: true}))
+  ], { force: true }))
 }
 
-function clean_build(){
+function clean_build() {
   return Promise.resolve(del([
-    configs.paths.tmp.root, 
+    configs.paths.tmp.root,
     configs.paths.root + '/rev'
-  ],{force: true}))
+  ], { force: true }))
 }
 
-function start(){
+function start() {
   return Promise.resolve(hcjlab(configs))
 }
 
-function build(){
-  return Promise.resolve(hcjlab(configs,{
+function build() {
+  return Promise.resolve(hcjlab(configs, {
     minify: true,
     serve: false,
     hash: true
   }))
 }
-exports.clean  = clean
-exports.clean_build  = clean_build
-exports.build = series(clean,build)
-exports.default = series(clean,start)
+exports.clean = clean
+exports.clean_build = clean_build
+exports.build = series(clean, build)
+exports.default = series(clean, start)
 

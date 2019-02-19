@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "HTML Build Tools Core",
   "main": "index.js",
-  "repository": "git@github.com:hcjlab/core.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/hcjlab/core.git"
+  },
   "author": "tinhvqbk <tinhvqbk@gmail.com>",
   "license": "MIT",
   "dependencies": {
@@ -34,5 +37,19 @@
     "uglify-es": "^3.3.9",
     "webpack": "^4.29.4",
     "webpack-stream": "^5.2.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/hcjlab/core/issues"
+  },
+  "homepage": "https://github.com/hcjlab/core#readme",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "cd _test && yarn && yarn start"
+  },
+  "engines": {
+    "node": ">= 8"
+  },
+  "license": "ISC"
 }

@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "del": "^3.0.0",
-    "dotenv": "^6.2.0"
+    "dotenv": "^6.2.0",
+    "@hcjlab/core": "*"
   }
 }
