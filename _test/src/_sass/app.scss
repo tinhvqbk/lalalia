@@ -1,0 +1,11 @@
+body {
+    background-color: #f7f7f7;
+    color: blue;
+    background-image: url('../images/sample.jpg');
+}
+.App {
+    display: flex;
+}
+::placeholder {
+    color: gray;
+  }

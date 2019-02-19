@@ -1,0 +1,18 @@
+{
+  "name": "@hcjlab/test",
+  "version": "0.1.0",
+  "description": "HTML Build Tools Core",
+  "main": "index.js",
+  "repository": "git@github.com:hcjlab/core.git",
+  "author": "tinhvqbk <tinhvqbk@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build && gulp clean_build",
+    "clean": "gulp clean"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "dotenv": "^6.2.0"
+  }
+}

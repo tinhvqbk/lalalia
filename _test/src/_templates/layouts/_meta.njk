@@ -1,0 +1,15 @@
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>
+        {{pageTitle}}
+    </title>
+    <script crossorigin="anonymous" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+    {% for css in mainCSS %}
+        <link href="assets/css/{{css}}.css" rel="stylesheet"/>
+    {% endfor %}
+    {% for css in extraCSS %}
+        <link href="assets/css/{{css}}.css" rel="stylesheet"/>
+    {% endfor %}
+</head>

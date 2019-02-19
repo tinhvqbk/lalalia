@@ -1,0 +1,35 @@
+{
+  "paths": {
+    "root": "./",
+    "src": {
+      "root": "./src/",
+      "sass": "./src/_sass",
+      "data": "./src/_data",
+      "data_file": "./src/.tmp/data.json",
+      "script": "./src/_script",
+      "templates": "./src/_templates",
+      "assets": "./src/assets",
+      "css": "./src/assets/css",
+      "js": "./src/assets/js",
+      "images": "./src/assets/images",
+      "svg": "./src/assets/svg",
+      "otherassets":"./src/assets/others",
+      "animation": "./src/assets/animation"
+    },
+    "dest": {
+      "root": "./public/",
+      "assets": "./public/assets",
+      "css": "./public/assets/css",
+      "js": "./public/assets/js",
+      "images": "./public/assets/images",
+      "animation": "./public/assets/animation",
+      "otherassets":"./public/assets/others"
+    },
+    "tmp": {
+      "root": "./.tmp"
+    },
+    "otherfile": [
+      "favicon.ico"
+    ]
+  }
+}

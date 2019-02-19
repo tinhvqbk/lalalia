@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    {% set mainCSS = ['app'] %}
+    {% include "_meta.njk" %}
+    <body>
+        <div id="root">
+            <div class="App">
+                {% block beforeBody %}{% endblock %}
+                <!-- layout: -->
+                <div
+                    class="gi-Layout {% if classLayout %}{{classLayout}}{% endif %} ">
+                    <!-- layout/header: -->
+                    <div class="gi-LayoutHeader">
+                        {% block pageHeader %}{% endblock %}
+                    </div>
+                    <!-- layout/body: -->
+                    <div class="gi-LayoutBody">
+                        {% block pageBody %}{Body}{% endblock %}
+                    </div>
+                    <!-- layout/footer: -->
+                    <div class="gi-LayoutFooter">
+                        {% block pageFooter %}{% endblock %}
+                    </div>
+                </div>
+                <!-- other content (such as: modal,...) -->
+                {% block afterBody %}{% endblock %}
+            </div>
+        </div>
+        <script async="async" type="text/javascript" src="{{baseRoot}}assets/js/app.js"></script>
+        {% block extraJS %}{% endblock %}
+    </body>
+</html>
