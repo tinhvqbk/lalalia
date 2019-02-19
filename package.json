@@ -1,6 +1,6 @@
 {
   "name": "@hcjlab/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "HTML Build Tools Core",
   "main": "index.js",
   "repository": {
