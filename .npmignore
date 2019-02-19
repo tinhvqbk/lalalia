@@ -2,5 +2,5 @@
 yarn.lock
 node_modules
 .tmp
-build
+public
 rev-manifest.json
