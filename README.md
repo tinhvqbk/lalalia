@@ -3,8 +3,7 @@ Build Tools
 This is person package!
 
 
-## MIT License
-ISC License
+## ISC License
 
 Copyright (c) 2019, HCJLab <Kyle Vu>
 

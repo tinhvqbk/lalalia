@@ -1,12 +1,9 @@
 'use strict'
 module.exports = {
-  "_" : require('lodash'),
   "path": require('path'),
   "vinyl": require('vinyl'),
   "fs": require('fs'),
   "log": require('fancy-log'),
-  "async": require('async'),
-  "mergeStream": require('merge-stream'),
   "replaceExtension": require('replace-ext'),
   "PluginError": require('plugin-error'),
   "colors": require('ansi-colors'),
@@ -17,7 +14,6 @@ module.exports = {
   "nunjucks": require('nunjucks'),
   "webpack": require('webpack'),
   "webpackStream": require('webpack-stream'),
-  "glob": require('glob'),
   "jsonlint": require('@hcjlab/jsonlint'),
   "postcssImport": require('postcss-import'),
   "cssnano": require('cssnano'),
@@ -34,7 +30,13 @@ module.exports = {
   "gulpIf": require('gulp-if'),
   //Build hash
   "rev": require('gulp-rev'),
-  "revCollector" : require('gulp-rev-collector')
+  "revCollector": require('gulp-rev-collector')
+}
+module.exports._ = {
+  "cloneDeep": require('lodash.clonedeep'),
+  "defaultsDeep": require('lodash.defaultsdeep'),
+  "isFunction": require('lodash.isfunction'),
+  "merge": require('lodash.merge'),
 }
 module.exports.lib = {
   "nunjuck": require('./lib/nunjuck'),
