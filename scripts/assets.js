@@ -2,8 +2,8 @@
 const _pkg = require('../package')
 
 function copy_rootFile(_config) {
-  return _pkg.gulp.src(_config.paths.rootfile)
-    .pipe(_pkg.gulp.dest(_config.paths.root))
+  return _pkg.gulp.src(_config.paths.src.otherfile)
+    .pipe(_pkg.gulp.dest(_config.paths.dest.root))
 
 }
 function copy(_config, _option) {

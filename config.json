@@ -13,7 +13,10 @@
       "js": "./src/assets/js",
       "images": "./src/assets/images",
       "svg": "./src/assets/svg",
-      "otherassets": "./src/assets/others"
+      "otherassets": "./src/assets/others",
+      "otherfile": [
+        "./src/favicon.ico"
+      ]
     },
     "dest": {
       "root": "./public/",
@@ -25,9 +28,6 @@
     },
     "tmp": {
       "root": "./.tmp"
-    },
-    "rootfile": [
-      "favicon.ico"
-    ]
+    }
   }
 }
