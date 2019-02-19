@@ -1,5 +1,6 @@
 'use strict'
 module.exports = {
+  "_": require('lodash'),
   "path": require('path'),
   "vinyl": require('vinyl'),
   "fs": require('fs'),
@@ -31,12 +32,6 @@ module.exports = {
   //Build hash
   "rev": require('gulp-rev'),
   "revCollector": require('gulp-rev-collector')
-}
-module.exports._ = {
-  "cloneDeep": require('lodash.clonedeep'),
-  "defaultsDeep": require('lodash.defaultsdeep'),
-  "isFunction": require('lodash.isfunction'),
-  "merge": require('lodash.merge'),
 }
 module.exports.lib = {
   "nunjuck": require('./lib/nunjuck'),
