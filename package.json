@@ -8,7 +8,6 @@
     "url": "git+ssh://git@github.com/hcjlab/core.git"
   },
   "author": "tinhvqbk <tinhvqbk@gmail.com>",
-  "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.3.0",
