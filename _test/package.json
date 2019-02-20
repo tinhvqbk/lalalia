@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": "git@github.com:hcjlab/core.git",
   "author": "tinhvqbk <tinhvqbk@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "start": "gulp",
     "build": "gulp build && gulp clean_build",
