@@ -3,7 +3,9 @@ module.exports = {
   "_": require('lodash'),
   "path": require('path'),
   "vinyl": require('vinyl'),
+  "crc": require('crc'),
   "fs": require('fs'),
+  "fsEx": require('fs-extra'),
   "log": require('fancy-log'),
   "replaceExtension": require('replace-ext'),
   "PluginError": require('plugin-error'),
@@ -41,4 +43,5 @@ module.exports.lib = {
   "htmlBeautify": require('./lib/html-beautify'),
   "jsInlineMin": require('./lib/js-inline-min'),
   "jsMin": require('./lib/js-min'),
+  "fileSync": require('./lib/file-sync')
 }

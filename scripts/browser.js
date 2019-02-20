@@ -4,7 +4,7 @@ const _sass = require('./style')
 const _html = require('./html')
 const _script = require('./script')
 const _data = require('./data')
-function init(_config,_option) {
+function init(_config, _option) {
   const _sync = _pkg.browser.create()
   _sync.init({
     server: {
@@ -19,25 +19,32 @@ function init(_config,_option) {
     _config.paths.src.sass + '/**/*',
     _config.paths.src.script + '/**/*',
     _config.paths.src.templates + '/**/*',
-  ],{
-
-  }).on('all',function (event,path) {
-    if(event == 'change'){
+  ]).on('all', function (event, path) {
+    if (event == 'change') {
       const extFile = _pkg.path.extname(path)
       _sync.reload()
-      _pkg.log.info('[%s] %s %s', _pkg.colors.blue('Watch'),_pkg.colors.cyan(path), event)
-      if(extFile === '.scss' || extFile === '.css'){
-        _sass.init(_config,_option)
+      _pkg.log.info('[%s] %s %s', _pkg.colors.blue('Watch'), _pkg.colors.cyan(path), event)
+      if (extFile === '.scss' || extFile === '.css') {
+        _sass.init(_config, _option)
       }
-      if(extFile === '.njk' || extFile === '.svg'){
-        _html.init(_config,_option)
+      if (extFile === '.njk' || extFile === '.svg') {
+        _html.init(_config, _option)
       }
-      if(extFile === '.js' || extFile === '.jsx' || extFile === '.mjs'){
-        _script.init(_config,_option)
+      if (extFile === '.js' || extFile === '.jsx' || extFile === '.mjs') {
+        _script.init(_config, _option)
       }
-      if(extFile === '.json'){
-        _data.init(_config,_option)
+      if (extFile === '.json') {
+        _data.init(_config, _option)
       }
+    }
+  })
+  _pkg.chokidar.watch([
+    _config.paths.src.assets
+  ]).on('all', (event) => {
+    if (event == 'change' || event == 'unlink') {
+      _pkg.lib.fileSync(_config.paths.src.images, _config.paths.dest.images)
+      _pkg.lib.fileSync(_config.paths.src.otherassets, _config.paths.dest.otherassets)
+      _sync.reload()
     }
   })
 }
