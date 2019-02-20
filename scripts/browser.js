@@ -19,22 +19,31 @@ function init(_config, _option) {
     _config.paths.src.sass + '/**/*',
     _config.paths.src.script + '/**/*',
     _config.paths.src.templates + '/**/*',
-  ]).on('all', function (event, path) {
+  ]).on('all', (event, path) => {
     if (event == 'change') {
       const extFile = _pkg.path.extname(path)
-      _sync.reload()
       _pkg.log.info('[%s] %s %s', _pkg.colors.blue('Watch'), _pkg.colors.cyan(path), event)
       if (extFile === '.scss' || extFile === '.css') {
-        _sass.init(_config, _option)
+        _sass.init(_config, _option).then(() => {
+          _sync.reload()
+        })
       }
       if (extFile === '.njk' || extFile === '.svg') {
-        _html.init(_config, _option)
+        _html.init(_config, _option).then(() => {
+          _sync.reload()
+        })
       }
       if (extFile === '.js' || extFile === '.jsx' || extFile === '.mjs') {
-        _script.init(_config, _option)
+        _script.init(_config, _option).then(() => {
+          _sync.reload()
+        })
       }
       if (extFile === '.json') {
-        _data.init(_config, _option)
+        _data.init(_config, _option).then(() => {
+          _html.init(_config, _option).then(() => {
+            _sync.reload()
+          })
+        })
       }
     }
   })
@@ -44,7 +53,6 @@ function init(_config, _option) {
     if (event == 'change' || event == 'unlink') {
       _pkg.lib.fileSync(_config.paths.src.images, _config.paths.dest.images)
       _pkg.lib.fileSync(_config.paths.src.otherassets, _config.paths.dest.otherassets)
-      _sync.reload()
     }
   })
 }
