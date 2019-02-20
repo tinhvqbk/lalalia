@@ -9,7 +9,7 @@ function copy_rootFile(_config) {
 function copy(_config, _option) {
   return new Promise(res => {
     _pkg.gulp.src([
-      _config.paths.src.assets + '/**/*.+(png|jpg|jpeg|gif|svg)',
+      _config.paths.src.assets + '/**/*',
       '!' + _config.paths.src.svg,
       '!' + _config.paths.src.svg + '/**/**',
     ])
