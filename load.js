@@ -10,7 +10,6 @@ const _browser = require('./scripts/browser')
 module.exports = function (configs, options) {
   _pkg.log.info('[' + _pkg.colors.blue('Copy') + '] Root file')
   _assets.copy_rootFile(configs)
-
   if (!options.hash) {
     _pkg.log.info('[' + _pkg.colors.blue('Copy') + '] Assets')
     _assets.copy(configs)
@@ -46,13 +45,12 @@ module.exports = function (configs, options) {
     .then(() => {
       _pkg.log.info('[' + _pkg.colors.green('Compiled') + '] Data JSON ')
       _pkg.log.info('[' + _pkg.colors.blue('Compile') + '] HTML')
-      _html.init(configs, options)
-    })
-    .then(() => {
-      _pkg.log.info('[' + _pkg.colors.green('Compileted') + '] HTML')
-      if (options.serve) {
-        _browser.init(configs, options)
-      }
+      _html.init(configs, options).then(() => {
+        _pkg.log.info('[' + _pkg.colors.green('Compileted') + '] HTML')
+        if (options.serve) {
+          _browser.init(configs, options)
+        }
+      })
     })
     .catch((err) => {
       _pkg.log.info('[' + _pkg.colors.red('Error') + '] ' + err)
