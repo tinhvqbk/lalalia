@@ -7,54 +7,44 @@ const _script = require('./scripts/script')
 const _html = require('./scripts/html')
 const _browser = require('./scripts/browser')
 
-module.exports = function (configs, options) {
+
+module.exports = async function (configs, options) {
   _pkg.log.info('[' + _pkg.colors.blue('Copy') + '] Root file')
   _assets.copy_rootFile(configs)
-  if (!options.hash) {
-    _pkg.log.info('[' + _pkg.colors.blue('Copy') + '] Assets')
-    _assets.copy(configs)
-      .then(() => {
-        _pkg.log.info('[' + _pkg.colors.green('Copied') + '] Assets')
-      })
-  }
   _pkg.log.info('[' + _pkg.colors.blue('Compile') + '] CSS')
-  _sass.init(configs, options)
-    .then(() => {
-      _pkg.log.info('[' + _pkg.colors.green('Compiled') + '] CSS')
-      _pkg.log.info('[' + _pkg.colors.blue('Compile') + '] Javascript')
-      _script.init(configs, options)
-        .then(() => {
-          _pkg.log.info('[' + _pkg.colors.green('Compiled') + '] Javascript')
-          if (options.hash) {
-            _pkg.log.info('[' + _pkg.colors.blue('Hash') + '] Assets')
-            _assets.copy_nohash(configs, options)
-            _assets.hash(configs, options)
-              .then(() => {
-                _pkg.log.info('[' + _pkg.colors.green('Hashed') + '] Assets')
-                _pkg.log.info('[' + _pkg.colors.blue('Revision') + '] Assets')
-                _assets.rev(configs, options)
-              })
-              .then(() => {
-                _pkg.log.info('[' + _pkg.colors.green('Revisioned') + '] Assets')
-              })
-          }
-        })
-    })
-  _pkg.log.info('[' + _pkg.colors.blue('Compile') + '] Data JSON')
-  _data.init(configs)
-    .then(() => {
-      _pkg.log.info('[' + _pkg.colors.green('Compiled') + '] Data JSON ')
-      _pkg.log.info('[' + _pkg.colors.blue('Compile') + '] HTML')
-      _html.init(configs, options).then(() => {
-        _pkg.log.info('[' + _pkg.colors.green('Compileted') + '] HTML')
-        if (options.serve) {
-          _browser.init(configs, options)
-        }
-      })
-    })
-    .catch((err) => {
-      _pkg.log.info('[' + _pkg.colors.red('Error') + '] ' + err)
-    })
+  await _sass.init(configs, options)
+  _pkg.log.info('[' + _pkg.colors.green('Compiled') + '] CSS')
 
+  _pkg.log.info('[' + _pkg.colors.blue('Compile') + '] Javascript')
+  await _script.init(configs, options)
+  _pkg.log.info('[' + _pkg.colors.green('Compiled') + '] Javascript')
+
+
+  if (options.hash) {
+    _pkg.log.info('[' + _pkg.colors.blue('Hash') + '] Assets')
+    await _assets.copy_nohash(configs, options)
+    await _assets.hash(configs, options)
+    _pkg.log.info('[' + _pkg.colors.green('Hashed') + '] Assets')
+  } else {
+    _pkg.log.info('[' + _pkg.colors.blue('Copy') + '] Assets')
+    await _assets.copy(configs)
+    _pkg.log.info('[' + _pkg.colors.green('Copied') + '] Assets')
+  }
+
+  _pkg.log.info('[' + _pkg.colors.blue('Compile') + '] Data JSON')
+  await _data.init(configs)
+  _pkg.log.info('[' + _pkg.colors.green('Compiled') + '] Data JSON ')
+
+  _pkg.log.info('[' + _pkg.colors.blue('Compile') + '] HTML')
+  await _html.init(configs, options)
+  _pkg.log.info('[' + _pkg.colors.green('Compileted') + '] HTML')
+  if (options.hash) {
+    _pkg.log.info('[' + _pkg.colors.blue('Revision') + '] Assets')
+    await _assets.rev(configs, options)
+    _pkg.log.info('[' + _pkg.colors.green('Revisioned') + '] Assets')
+  }
+  if (options.serve) {
+    _browser.init(configs, options)
+  }
 }
 
