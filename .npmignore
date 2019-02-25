@@ -4,3 +4,4 @@ node_modules
 .tmp
 public
 rev-manifest.json
+__test/
