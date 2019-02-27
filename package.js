@@ -22,7 +22,7 @@ module.exports = {
   "cssnano": require('cssnano'),
   "htmlMin": require('html-minifier'),
   "decomment": require('decomment'),
-  "uglifyJS": require('uglify-js'),
+  "uglifyJS": require('uglify-es'),
   "autoprefixer": require('autoprefixer'),
   "beautify": require('js-beautify'),
   "crypto": require('crypto'),
@@ -31,6 +31,7 @@ module.exports = {
   "gulpPostcss": require('gulp-postcss'),
   "gulpSass": require('gulp-sass'),
   "gulpIf": require('gulp-if'),
+  "gulpBabel": require('gulp-babel'),
   //Build hash
   "rev": require('gulp-rev'),
   "revCollector": require('gulp-rev-collector')
