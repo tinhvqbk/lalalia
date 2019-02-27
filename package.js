@@ -22,7 +22,7 @@ module.exports = {
   "cssnano": require('cssnano'),
   "htmlMin": require('html-minifier'),
   "decomment": require('decomment'),
-  "uglifyJS": require('uglify-es'),
+  "uglifyJS": require('uglify-js'),
   "autoprefixer": require('autoprefixer'),
   "beautify": require('js-beautify'),
   "crypto": require('crypto'),
