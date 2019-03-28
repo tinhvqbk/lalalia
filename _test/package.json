@@ -14,5 +14,8 @@
   "devDependencies": {
     "del": "^3.0.0",
     "dotenv": "^6.2.0"
+  },
+  "dependencies": {
+    "gulp": "^4.0.0"
   }
 }

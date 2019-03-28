@@ -1,19 +1,19 @@
 {
-  "name": "@hcjlab/core",
+  "name": "lalalia",
   "version": "1.0.16",
   "description": "HTML Build Tools Core",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/hcjlab/core.git"
+    "url": "git+ssh://git@github.com/tinhvqbk/lalalia.git"
   },
   "author": "tinhvqbk <tinhvqbk@gmail.com>",
   "dependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.3.0",
     "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
-    "@hcjlab/jsonlint": "*",
     "autoprefixer": "^9.4.7",
     "babel-loader": "^8.0.5",
     "browser-sync": "^2.26.3",
@@ -30,15 +30,16 @@
     "gulp-sass": "^4.0.2",
     "html-minifier": "^3.5.21",
     "js-beautify": "^1.8.9",
+    "jsonlint": "^1.6.3",
     "nunjucks": "^3.1.7",
     "postcss-import": "^12.0.1",
     "uglify-js": "^3.4.9",
     "webpack-stream": "^5.2.1"
   },
   "bugs": {
-    "url": "https://github.com/hcjlab/core/issues"
+    "url": "https://github.com/tinhvqbk/lalalia/issues"
   },
-  "homepage": "https://github.com/hcjlab/core#readme",
+  "homepage": "https://github.com/tinhvqbk/lalalia#readme",
   "directories": {
     "lib": "lib"
   },
