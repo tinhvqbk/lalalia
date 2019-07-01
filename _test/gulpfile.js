@@ -1,9 +1,9 @@
 const { series, parallel } = require('gulp'),
   del = require('del'),
   dotenv = require('dotenv'),
-  hcjlab = require('../index')
+  lalalia = require('../index')
 let path = process.env.APP_ENV ? '.env.' + process.env.APP_ENV : '.env'
-const configs = hcjlab.getConfigs()
+const configs = lalalia.getConfigs()
 
 console.log(`CONFIG: ${path}`)
 dotenv.config({ path })
@@ -25,11 +25,11 @@ function clean_build() {
   ], { force: true }))
 }
 function start() {
-  return Promise.resolve(hcjlab(configs))
+  return Promise.resolve(lalalia(configs))
 }
 
 function build() {
-  return Promise.resolve(hcjlab(configs, {
+  return Promise.resolve(lalalia(configs, {
     minify: true,
     serve: false,
     hash: true

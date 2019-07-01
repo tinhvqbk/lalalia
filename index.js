@@ -11,12 +11,12 @@ let defaultOptions = {
   jsOptimize: false,
   hash: false
 }
-const hjcLab = (configs,options) => {
+const lalalia = (configs,options) => {
   configs = _pkg._.defaultsDeep(configs || {}, defaultConfig);
   options = _pkg._.defaultsDeep(options || {}, defaultOptions);
   return _pkg.through2.obj(load(configs,options))
 }
-hjcLab.getConfigs = function (configs) {
+lalalia.getConfigs = function (configs) {
   return  configs = _pkg._.defaultsDeep(configs || {}, defaultConfig);
 }
-module.exports = hjcLab
+module.exports = lalalia

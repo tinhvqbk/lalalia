@@ -17,7 +17,7 @@ module.exports = {
   "nunjucks": require('nunjucks'),
   "webpack": require('webpack'),
   "webpackStream": require('webpack-stream'),
-  "jsonlint": require('@hcjlab/jsonlint'),
+  "jsonlint": require('jsonlint'),
   "postcssImport": require('postcss-import'),
   "cssnano": require('cssnano'),
   "htmlMin": require('html-minifier'),

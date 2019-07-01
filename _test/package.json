@@ -1,9 +1,9 @@
 {
-  "name": "@hcjlab/test",
+  "name": "test",
   "version": "0.1.0",
   "description": "HTML Build Tools Core",
   "main": "index.js",
-  "repository": "git@github.com:hcjlab/core.git",
+  "url": "git+ssh://git@github.com/tinhvqbk/lalalia.git",
   "author": "tinhvqbk <tinhvqbk@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -14,5 +14,8 @@
   "devDependencies": {
     "del": "^3.0.0",
     "dotenv": "^6.2.0"
+  },
+  "dependencies": {
+    "gulp": "^4.0.0"
   }
 }

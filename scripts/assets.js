@@ -25,6 +25,7 @@ function copy_nohash(_config, _option) {
       .pipe(_pkg.gulpIf('*.html', _pkg.lib.htmlMin({ collapseWhitespace: true })))
       .pipe(_pkg.gulpIf('*.html', _pkg.lib.jsInlineMin()))
       .pipe(_pkg.gulpIf('*.js', _pkg.gulpBabel({
+        compact: false,
         presets: ['@babel/preset-env'],
         plugins: [
           '@babel/plugin-proposal-class-properties'
@@ -44,7 +45,6 @@ function hash(_config, _option) {
     ])
       .pipe(_pkg.rev())
       .pipe(_pkg.lib.revURL())
-      .pipe(_pkg.gulpIf('*.js', _pkg.lib.jsMin()))
       .pipe(_pkg.gulp.dest(_config.paths.dest.assets))
       .pipe(_pkg.rev.manifest('assets.json', { merge: true }))
       .pipe(_pkg.gulp.dest(_config.paths.root + '/rev'))

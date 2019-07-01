@@ -4,7 +4,7 @@ function init(_config, _option) {
   const dest = _option.hash ? _config.paths.src.js : _config.paths.dest.js
   const webpackMode = (_option.jsOptimize || _option.minify) ? 'production' : 'development'
   return new Promise(res => {
-    _pkg.gulp.src(_config.paths.src.script + '/**/*.+(js|mjs|jsx)')
+    _pkg.gulp.src(_config.paths.src.script + '/*.+(js|mjs|jsx)')
       .pipe(_pkg.webpackStream({
         mode: webpackMode,
         output: {
@@ -18,7 +18,7 @@ function init(_config, _option) {
               use: {
                 loader: 'babel-loader',
                 options: {
-                  presets: ['@babel/preset-env'],
+                  presets: ['@babel/preset-env','@babel/preset-react'],
                   plugins: [
                     '@babel/plugin-proposal-class-properties'
                   ]
