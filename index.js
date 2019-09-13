@@ -19,4 +19,5 @@ const lalalia = (configs,options) => {
 lalalia.getConfigs = function (configs) {
   return  configs = _pkg._.defaultsDeep(configs || {}, defaultConfig);
 }
+lalalia.sitemap = _pkg.lib.sitemap;
 module.exports = lalalia

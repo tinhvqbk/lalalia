@@ -43,6 +43,12 @@ module.exports = async function (configs, options) {
     await _assets.rev(configs, options)
     _pkg.log.info('[' + _pkg.colors.green('Revisioned') + '] Assets')
   }
+  if (options.sitemap) {
+    _pkg.log.info('[' + _pkg.colors.blue('Generating') + '] Sitemap')
+    await _assets.sitemap(configs, options)
+    _pkg.log.info('[' + _pkg.colors.green('Generated') + '] Sitemap')
+  }
+
   if (options.serve) {
     _browser.init(configs, options)
   }

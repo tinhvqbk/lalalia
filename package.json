@@ -31,8 +31,10 @@
     "html-minifier": "^3.5.21",
     "js-beautify": "^1.8.9",
     "jsonlint": "^1.6.3",
+    "multimatch": "^4.0.0",
     "nunjucks": "^3.1.7",
     "postcss-import": "^12.0.1",
+    "slash": "^3.0.0",
     "uglify-js": "^3.4.9",
     "webpack-stream": "^5.2.1"
   },

@@ -62,10 +62,25 @@ function rev(_config, _option) {
       .on('end', res)
   })
 }
+
+function sitemap(_config, _option) {
+  return new Promise(res => {
+    _pkg.gulp.src([
+      _config.paths.dest.root + '*.html',
+      '!' + _config.paths.dest.assets + '/**/*.html',
+    ], {
+      read: false
+    })
+      .pipe(_pkg.lib.sitemap(_option.sitemap))
+      .pipe(_pkg.gulp.dest(_config.paths.dest.root))
+      .on('end', res)
+  })
+}
 module.exports = {
   "copy": copy,
   "copy_rootFile": copy_rootFile,
   "copy_nohash": copy_nohash,
   "hash": hash,
+  "sitemap": sitemap,
   "rev": rev
 }

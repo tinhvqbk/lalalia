@@ -26,6 +26,8 @@ module.exports = {
   "autoprefixer": require('autoprefixer'),
   "beautify": require('js-beautify'),
   "crypto": require('crypto'),
+  "multimatch": require('multimatch'),
+  "slash": require('slash'),
   //Gulp
   "gulp": require('gulp'),
   "gulpPostcss": require('gulp-postcss'),
@@ -38,6 +40,7 @@ module.exports = {
 }
 module.exports.lib = {
   "nunjuck": require('./lib/nunjuck'),
+  "sitemap": require('./lib/sitemap'),
   "revURL": require('./lib/rev-url'),
   "mergeJson": require('./lib/merge-json'),
   "htmlMin": require('./lib/html-min'),

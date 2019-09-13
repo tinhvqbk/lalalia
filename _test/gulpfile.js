@@ -32,9 +32,13 @@ function build() {
   return Promise.resolve(lalalia(configs, {
     minify: true,
     serve: false,
-    hash: true
+    hash: true,
+    sitemap: {
+      siteUrl: 'http://example.com/'
+    }
   }))
 }
+
 exports.clean = clean
 exports.clean_build = clean_build
 exports.build = series(clean, build)
