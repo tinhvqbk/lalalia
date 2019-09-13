@@ -66,7 +66,7 @@ function rev(_config, _option) {
 function sitemap(_config, _option) {
   return new Promise(res => {
     _pkg.gulp.src([
-      _config.paths.dest.root + '*.html',
+      _config.paths.dest.root + '/**/*.html',
       '!' + _config.paths.dest.assets + '/**/*.html',
     ], {
       read: false
