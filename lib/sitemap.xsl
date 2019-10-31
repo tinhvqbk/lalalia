@@ -12,8 +12,11 @@
 				<meta name="robots" content="noindex,follow" />
 				<style type="text/css">
 					body {
-						font-family:"Lucida Grande","Lucida Sans Unicode",Tahoma,Verdana;
-						font-size:13px;
+						color: #172B4D;
+                        font-family: Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;
+                        font-size: 16px;
+                        line-height: 1.5;
+                        margin: 0;
 					}
 					
 					#intro {
@@ -31,13 +34,13 @@
 					}
 					
 					td {
-						font-size:11px;
+						<!-- font-size:11px; -->
 					}
 					
 					th {
 						text-align:left;
 						padding-right:30px;
-						font-size:11px;
+						<!-- font-size:11px; -->
 					}
 					
 					tr.high {
@@ -56,8 +59,13 @@
 					}
 					
 					a {
-						color:black;
+						background-color: transparent;
+                        text-decoration: none;
+                        color: #375DE7;
 					}
+                    a:hover {
+                        color: #21388B;
+                    }
 				</style>
 			</head>
 			<body>
@@ -108,10 +116,6 @@
 	<xsl:template match="sitemap:sitemapindex">
         <h1>XML Sitemap Index</h1>
         <div id="intro">
-            <p>
-                This is a XML Sitemap which is supposed to be processed by search engines which follow the XML Sitemap standard like Ask.com, Bing, Google and Yahoo.<br />
-                You can find more information about XML sitemaps on <a rel="external nofollow" href="http://sitemaps.org">sitemaps.org</a> and Google's <a rel="external nofollow" href="http://code.google.com/p/sitemap-generators/wiki/SitemapGenerators">list of sitemap programs</a>.<br />
-            </p>
         </div>
 		<div id="content">
 			<table cellpadding="5">
