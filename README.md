@@ -1,10 +1,10 @@
 Build Tools 
 =========
 ![npm](https://img.shields.io/npm/v/lalalia?style=flat-square)
+![npm](https://img.shields.io/npm/dt/lalalia?style=flat-square)
 ![node](https://img.shields.io/node/v/lalalia?style=flat-square)
 ![David](https://img.shields.io/david/tinhvqbk/lalalia?style=flat-square)
 ![David](https://img.shields.io/david/dev/tinhvqbk/lalalia?style=flat-square)
-![npm](https://img.shields.io/npm/dt/lalalia?style=flat-square)
 ![NPM](https://img.shields.io/npm/l/lalalia?style=flat-square)
 
 This is person package!
