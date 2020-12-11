@@ -6,6 +6,7 @@ Build Tools
 ![David](https://img.shields.io/david/tinhvqbk/lalalia?style=flat-square)
 ![David](https://img.shields.io/david/dev/tinhvqbk/lalalia?style=flat-square)
 ![NPM](https://img.shields.io/npm/l/lalalia?style=flat-square)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftinhvqbk%2Flalalia.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftinhvqbk%2Flalalia?ref=badge_shield)
 
 This is person package!
 
@@ -30,3 +31,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftinhvqbk%2Flalalia.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftinhvqbk%2Flalalia?ref=badge_large)
