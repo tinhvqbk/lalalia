@@ -1,4 +1,4 @@
-Build Tools 
+Build Tools  [![Verified on Openbase](https://badges.openbase.com/js/verified/lalalia.svg?token=jBP26lSgDIdJjg+wF0u6eJJ6uTI1oGKVJh0cB+NH3lg=)](https://openbase.com/js/lalalia?utm_source=embedded&amp;utm_medium=badge&amp;utm_campaign=rate-badge)
 =========
 ![npm](https://img.shields.io/npm/v/lalalia?style=flat-square)
 ![npm](https://img.shields.io/npm/dt/lalalia?style=flat-square)
